@@ -29,9 +29,11 @@ describe HasStates do
     f.state = "completed"
     f.completed?.must_equal true
     f.running?.must_equal false
+    f.not_running?.must_equal true
 
     f.state = "running"
     f.completed?.must_equal false
+    f.not_completed?.must_equal true
     f.running?.must_equal true
 
     b = Bar.new

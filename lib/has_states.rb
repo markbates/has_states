@@ -19,6 +19,9 @@ module HasStates
         define_method("#{s}?") do
           return self.send(attr).to_s == s
         end
+        define_method("not_#{s}?") do
+          return self.send(attr).to_s != s
+        end
         define_method("#{s}!") do
           self.send("#{attr}=", s)
           self.save!
